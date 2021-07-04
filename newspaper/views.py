@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from datetime import datetime
 
 # Create your views here.
 
@@ -32,6 +33,8 @@ def home(request):
 
     reel = News.objects.filter(category__name = 'REEL').order_by('-id')[:3]
     topstories = News.objects.all().order_by('?')[:5]
+
+    date = datetime.today().strftime('%A, %d %B')
     return render(request, 'home.html', {
         'top_news': top_news,
         'news': news,
@@ -41,6 +44,7 @@ def home(request):
         'editors': editors,
         'editors0': editors0,
         'topstories': topstories,
+        'date': date
     })
 
 def news(request, pk):
@@ -50,9 +54,10 @@ def news(request, pk):
 
     topstories = News.objects.all().order_by('?').exclude(id=pk)[:4]
     random = News.objects.all().order_by('?').exclude(id=pk)[:3]
+
     return render(request, 'news.html', {
         'news': news,
         'similar': similar,
         'topstories': topstories,
-        'random': random
+        'random': random,
     })

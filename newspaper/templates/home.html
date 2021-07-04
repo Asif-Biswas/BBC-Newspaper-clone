@@ -5,7 +5,7 @@
 {% block body %}
 <div class="space-between" style="height: 50px;">
     <p style="font-size: min(5vw, 24px);">Welcome to BBC.com</p>
-    <p style="font-size: min(4vw, 24px); color: gray;">Tuesday, 29 June</p>
+    <p style="font-size: min(4vw, 24px); color: gray;">{{date}}</p>
 </div>
 
 <div class="top-news-container hiddenx">
@@ -158,7 +158,7 @@
             </div>
             <p style="font-size: 20px; color: white; margin-left: 16px; margin-top: -12px;">The most amazing videos from the BBC</p>
 
-            <div class="space-between2">
+            <div class="space-between2 pdr8">
             {% for news in reel %}
                 <div class="hover-opacity pointer" style="width: 100%; background-color: white; margin-right: 8px; margin-bottom: 18px; margin-left: 4px; margin-top: 8px;">
                     <div>
@@ -240,47 +240,57 @@
                         <div class="pdx8 news-item-2nd-div" style="margin-top: -14px; font-family: sans-serif;">
                             <h3>{{news.title}}</h3>
                             <p class="news-item-container-p" style="margin-top: -8px; padding-bottom: 8px;">{{news.important_part}}</p>
-                            <span class="pdy4  border-red" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
+                            <span class="pdy4  border-yellow" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
                         </div>
                     </a>
                 {% endfor %}
                     
                 </div>
             </div>
-            <div class="editors-picks-news mrl8">
+            <div class="editors-picks-news margin-top-stories">
                 <div class="latest-news red">
                     <h2 style="color: white; margin: auto; padding: 16px 16px 16px 16px;">Top Stories</h2>
                     
                 </div>
                 <div style="font-family: sans-serif;">
                 {% with topstories.0 as news %}
-                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
-                        <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">1</span>
-                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    <a href={% url 'news' news.id %} class="tdn">
+                        <div class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                            <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">1</span>
+                            <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                        </div>
                     </a>
                 {% endwith %}
                 {% with topstories.1 as news %}
-                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
-                        <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">2</span>
-                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    <a href={% url 'news' news.id %} class="tdn">
+                        <div class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                            <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">2</span>
+                            <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                        </div>
                     </a>
                 {% endwith %}
                 {% with topstories.2 as news %}
-                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
-                        <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">3</span>
-                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    <a href={% url 'news' news.id %} class="tdn">
+                        <div class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                            <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">3</span>
+                            <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                        </div>
                     </a>
                 {% endwith %}
                 {% with topstories.3 as news %}
-                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
-                        <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">4</span>
-                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    <a href={% url 'news' news.id %} class="tdn">
+                        <div class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                            <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">4</span>
+                            <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                        </div>
                     </a>
                 {% endwith %}
                 {% with topstories.4 as news %}
-                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
-                        <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">5</span>
-                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    <a href={% url 'news' news.id %} class="tdn">
+                        <div class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                            <span class="s3 l3 red" style="display: block; padding: 14px; color: white; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">5</span>
+                            <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                        </div>
                     </a>
                 {% endwith %}
                     

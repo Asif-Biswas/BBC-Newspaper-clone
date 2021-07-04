@@ -27,11 +27,12 @@ width: 100%;
     .space-between2{display: flex; justify-content: space-between;}
     .details-news{display: flex;}.details-news-child:first-child{width: 60%;}.details-news-child:last-child{width: 40%;}}
 
-@media (min-width:601px){.editors-picks-news-container{display: flex;}.editors-picks-news:first-child{width: 60%;}.editors-picks-news:last-child{width: 40%;}}
+@media (min-width:601px){.editors-picks-news-container{display: flex;}.editors-picks-news:first-child{width: 60%;}.editors-picks-news:last-child{width: 40%;}
+    .margin-top-stories{margin-left: 8px;}}
 
 @media (min-width:993px){.flex-latest-news{display: flex;}}
 @media (min-width:601px) and (max-width:992px){.news-item-container:last-child, .asia-news-item:last-child, .sport-news-item:last-child{display: none;}}
-@media (max-width:601px){.flex-latest-news{display: flex;}}
+@media (max-width:601px){.flex-latest-news{display: flex;}.margin-top-stories{margin-top: 8px;}}
 
 .cder{color: #89a5a2; margin-top: 12px;}
 .centery{display: flex; align-items: center;}
