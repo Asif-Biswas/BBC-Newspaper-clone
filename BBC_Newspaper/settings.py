@@ -25,7 +25,7 @@ SECRET_KEY = 'un76)(bmwryuc5-gwu$jlv5$=8y73oqnytk$+t0%0ngl650*dz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
