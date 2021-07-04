@@ -1,0 +1,73 @@
+
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block body %}
+
+
+<div>
+    <div class="details-news mrt24 pd8">
+        <div class="details-news-child mrx8">
+            <div style="max-width: 600px; margin: auto;">
+                <h1>{{news.title}}</h1>
+                <p>&#128345;<span style="padding: 4px 8px; border-right: 1px solid gray;">{{news.date|timesince}}</span><span class="hover-text-green pointer" style="padding: 4px 8px; border-right: 1px solid gray;">{{news.tag.name}}</span></p>
+                <hr/>
+                <img src="{{news.image.url}}" style="width: 100%;"/>
+                <p style="font-weight: bold; font-size: 22px;">{{news.important_part}}</p>
+                <p style="white-space: pre-wrap; font-size: 21px;">{{news.first_part}}</p>
+                <div class="pdx16 pdy8" style="font-size: 18px;">
+                    {% for news in random %}
+                    <li class="hover-text-blue pointer" style="list-style-type: square; padding: 8px; font-weight: bold;"><a href={% url 'news' news.id %} class="hover-text-blue" style="color: black;">{{news.title}}</a></li>
+                    {% endfor %}
+                </div>
+                <p style="white-space: pre-wrap; font-size: 21px;">{{news.last_part}}</p>
+            </div>
+        </div>
+        <div class="details-news-child">
+            <div style="background-color: rgb(241, 241, 241); padding: 8px 0px 8px 8px;">
+                <h2>Top Stroies</h2>
+                <div>
+                    {% for news in topstories %}
+                    <a href={% url 'news' news.id %} class="tdn text-black flex pointer hover-opacity" style="margin-bottom: 12px;">
+                        <div class="s4 m5 l5">
+                            <div style="padding-bottom:60%; position: relative;">
+                                <div class="flex-center" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                                    <img src="{{news.image.url}}" style="width: 100%; height: 100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s8 m7 l7" style="margin: -16px 4px 0 8px; font-family: sans-serif;">
+                            <div class="pdt4">
+                                <p style="font-weight: bold; font-size: 16px;">{{news.title}}</p>
+                                <span class="pdy4" style="font-size: 14px; opacity: .7;">&#128345;<span style="padding: 4px 4px; border-right: 1px solid gray;">{{news.date|timesince}}</span><span class="hover-text-green pointer" style="padding: 4px 4px; border-right: 1px solid gray;">{{news.tag.name}}</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div style="background-color: rgb(241, 241, 241); padding: 8px 0px 8px 8px; margin-top: 16px;">
+                <h2>Also in {{news.category.name}}</h2>
+                <div style="display: inline-block;">
+                {% for news in similar %}
+                    <span class="pointer hover-opacity" style="display: block; float: left; max-width: 47%; min-width: 160px; margin: 8px 4px;">
+                        <div class="white">
+                            <div style="position: relative; padding-bottom: 60%; background: rgba(0, 0, 0, 0.705); width: 100%;">
+                                <div class="flex-center" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                                    <img src="{{news.image.url}}" style="width: 100%; height: 100%;"/>
+                                </div>
+                            </div>
+                            <p style="margin-top: 2px; height: 70px; overflow: hidden; font-weight: bold; padding: 4px; font-family: sans-serif;">{{news.title}}</p>
+                        </div>
+                    </span>
+                {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

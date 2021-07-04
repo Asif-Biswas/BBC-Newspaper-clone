@@ -1,0 +1,324 @@
+
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block body %}
+<div class="space-between" style="height: 50px;">
+    <p style="font-size: min(5vw, 24px);">Welcome to BBC.com</p>
+    <p style="font-size: 24px; color: gray;">Tuesday, 29 June</p>
+</div>
+
+<div class="top-news-container hiddenx">
+    {% with top_news.0 as news %}
+    <div class="top-news-1" style="position: relative; background-color: lightgray; margin: 4px 8px 4px 4px;">
+        <a href={% url 'news' news.id %}>
+        <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+            <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+            <p style="position: absolute; bottom: -28px; left: 0; color: white; background: rgba(0,0,0,.3); width: 100%; padding-bottom: 8px; font-size: min(5vw,28px);">
+                <span class="mrx8" style="display: block; margin-bottom: -44px; font-family: sans-serif;">{{news.title}}</span> <br/>
+                <span class='hide' style="font-size: 18px; margin-left: 8px; display: block; margin-bottom: -24px; margin-right: 8px;">{{news.important_part}}</span> <br/>
+                <span class="pdy4 border-red mrl8" style="font-size: min(4vw, 20px); border-left: 3px solid;">{{news.tag.name}}</span>
+            </p>
+        </div>
+        </a>
+    </div>
+    {% endwith %}
+    <div class="top-news-1-1">
+        <div class="flex">
+        {% with top_news.1 as news %}
+            <div style="position: relative; width: 50%; padding-bottom: 30%; background-color: lightgray; margin: 4px 0px 4px 4px;">        
+                <a href={% url 'news' news.id %}>
+                <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                    <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                    <p class='cder' style="position: absolute; bottom: -20px; left: 0; color: white; background: rgba(0,0,0,.3); font-size: min(3.5vw, 19px); width: 100%; padding-bottom: 8px;">
+                        <span class="mrl8" style="display: block; margin-bottom: -16px; font-family: sans-serif;">{{news.title}}</span> <br/>
+                        <span class="pdy4 border-red mrl8" style="font-size: min(2.7vw, 16px); border-left: 3px solid;">{{news.tag.name}}</span>
+                    </p>
+                </div>
+                </a>
+            </div>
+        {% endwith %}
+        {% with top_news.2 as news %}
+            <div style="position: relative; width: 50%; padding-bottom: 30%; background-color: lightgray; margin: 4px 0px 4px 4px;">
+                <a href={% url 'news' news.id %}>
+                <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                    <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                    <p style="position: absolute; bottom: -20px; left: 0; color: white; background: rgba(0,0,0,.3); font-size: min(3.5vw, 19px); width: 100%; padding-bottom: 8px;">
+                        <span class="mrl8" style="display: block; margin-bottom: -16px; font-family: sans-serif;">{{news.title}}</span> <br/>
+                        <span class="pdy4 border-red mrl8" style="font-size: min(2.7vw, 16px); border-left: 3px solid;">{{news.tag.name}}</span>
+                    </p>
+                </div>
+                </a>
+            </div>
+        {% endwith %}
+        </div>
+        <div class="flex">
+        {% with top_news.3 as news %}
+            <div style="position: relative; width: 50%; padding-bottom: 30%; background-color: lightgray; margin: 4px 0px 4px 4px;">
+                <a href={% url 'news' news.id %}>
+                <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                    <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                    <p style="position: absolute; bottom: -20px; left: 0; color: white; background: rgba(0,0,0,.3); font-size: min(3.5vw, 19px); width: 100%; padding-bottom: 8px;">
+                        <span class="mrl8" style="display: block; margin-bottom: -16px; font-family: sans-serif;">{{news.title}}</span> <br/>
+                        <span class="pdy4 border-red mrl8" style="font-size: min(2.7vw, 16px); border-left: 3px solid;">{{news.tag.name}}</span>
+                    </p>
+                </div>
+                </a>
+            </div>
+        {% endwith %}
+        {% with top_news.4 as news %}
+            <div style="position: relative; width: 50%; padding-bottom: 30%; background-color: lightgray; margin: 4px 0px 4px 4px;">
+                <a href={% url 'news' news.id %}>
+                <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                    <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                    <p style="position: absolute; bottom: -20px; left: 0; color: white; background: rgba(0,0,0,.3); font-size: min(3.5vw, 19px); width: 100%; padding-bottom: 8px;">
+                        <span class="mrl8" style="display: block; margin-bottom: -16px; font-family: sans-serif;">{{news.title}}</span> <br/>
+                        <span class="pdy4 border-red mrl8" style="font-size: min(2.7vw, 16px); border-left: 3px solid;">{{news.tag.name}}</span>
+                    </p>
+                </div>
+                </a>
+            </div>
+        {% endwith %}
+        </div>
+    </div>
+</div>
+
+<br/>
+
+<div class="news-container">
+    <h2 class="pd4 border-blue mrx4" style="border-left: 3px solid; color: rgb(59, 59, 59);">News</h2>
+    <div class="space-between2 pdl8">
+    {% for news in news %}
+        <a href={% url 'news' news.id %} class="hover-opacity pdt4 pdr4 pdb24 pdl4 pointer news-item news-item-container pc tdn text-black" style="width: 100%;">
+            <div class="news-item-1st-div">
+                <div style="position: relative; padding-bottom: 60%; background: rgba(0, 0, 0, 0.705); width: 100%;">
+                    <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                        <img src="{{news.image.url}}" style="width:100%; height:100%"/>
+                    </div>
+                </div>
+            </div>
+            <div class="pdx8 news-item-2nd-div" style="margin-top: -16px; font-family: sans-serif;">
+                <h3>{{news.title}}</h3>
+                <p class="news-item-container-p" style="margin-top: -8px; padding-bottom: 8px;">{{news.important_part}}</p>
+                <span class="pdy4  border-blue" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
+            </div>
+        </a>
+
+        
+    {% endfor %}
+    </div>
+</div>
+
+
+<br/>
+
+
+<div class="news-container">
+    <h2 class="pd4 border-red mrx4" style="border-left: 3px solid; color: rgb(59, 59, 59);">Sport</h2>
+    <div class="space-between2 pdl8">
+    {% for news in sport %}
+        <a href={% url 'news' news.id %} class="hover-opacity pdt4 pdr4 pdb24 pdl4 pointer sport-news-item news-item-container pc tdn text-black" style="width: 100%;">
+            <div class="news-item-1st-div">
+                <div style="position: relative; padding-bottom: 60%; background: rgba(0, 0, 0, 0.705); width: 100%;">
+                    <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                        <img src="{{news.image.url}}" style="width:100%; height:100%"/>
+                    </div>
+                </div>
+            </div>
+            <div class="pdx8 news-item-2nd-div" style="margin-top: -16px; font-family: sans-serif;">
+                <h3>{{news.title}}</h3>
+                <p class="news-item-container-p" style="margin-top: -8px; padding-bottom: 8px;">{{news.important_part}}</p>
+                <span class="pdy4  border-red" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
+            </div>
+        </a>
+
+        
+    {% endfor %}
+    </div>
+</div>
+
+
+<br/><br/>
+
+<div onclick="notAvailable()" class="reel">
+    <div class="pdr16 pdb16 pc" style="width: 100%; background-color: rgba(0,0,0,.3);">
+        <div style="width: 100%; height: 100%; background-color: wheat; position: absolute; z-index: -1; overflow: hidden;">
+            <div class="pc">
+                <img src="{% static 'images/evening.jpg' %}" style="min-height: 1700px; min-width: 100%; position: absolute; z-index: -1;"/>
+            </div>
+        </div>
+        <div>
+            <div class="space-between mrx16">
+                <div style="color: white;">
+                    <h1>REEL</h1>
+                </div>
+                <div>
+                    <p style="white-space: nowrap; top: 0;" class="pdx16 pdy8 border border-white text-white round50 hover-white pointer">Visit the Reel &#8594;</p>
+                </div>
+            </div>
+            <p style="font-size: 20px; color: white; margin-left: 16px; margin-top: -12px;">The most amazing videos from the BBC</p>
+
+            <div class="space-between2">
+            {% for news in reel %}
+                <div class="hover-opacity pointer" style="width: 100%; background-color: white; margin-right: 8px; margin-bottom: 18px; margin-left: 4px; margin-top: 8px;">
+                    <div>
+                        <div style="position: relative; width: 100%; padding-bottom: 60%;">
+                            <div class="flex-center" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                                <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 22px; margin: 0 16px; padding: 8px 0px; font-family: sans-serif;">{{news.title}}</p>
+                </div>
+                
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br/>
+
+
+<div class="news-container">
+    <h2 class="pd4 border-green mrx4" style="border-left: 3px solid; color: rgb(59, 59, 59);">Asia News</h2>
+    <div class="space-between2 pdl8">
+    {% for news in asia %}
+        <a href={% url 'news' news.id %} class="hover-opacity pdt4 pdr4 pdb24 pdl4 pointer asia-news-item news-item-container pc tdn text-black" style="width: 100%;">
+            <div class="news-item-1st-div">
+                <div style="position: relative; padding-bottom: 60%; background: rgba(0, 0, 0, 0.705); width: 100%;">
+                    <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                        <img src="{{news.image.url}}" style="width:100%; height:100%"/>
+                    </div>
+                </div>
+            </div>
+            <div class="pdx8 news-item-2nd-div" style="margin-top: -16px; font-family: sans-serif;">
+                <h3>{{news.title}}</h3>
+                <p class="news-item-container-p" style="margin-top: -8px; padding-bottom: 8px;">{{news.important_part}}</p>
+                <span class="pdy4  border-green" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
+            </div>
+        </a>
+
+        
+    {% endfor %}
+    </div>
+</div>
+
+
+<br/>
+
+<div style="background-color: rgb(235, 235, 235);">
+    <div class="editors-picks pd4">
+        <h2 class="pd4 border-yellow mrx4" style="border-left: 3px solid; color: rgb(59, 59, 59);">Editor's Picks</h2>
+        <div class="editors-picks-news-container">
+            <div class="editors-picks-news" style="font-family: sans-serif;">
+            {% with editors0.0 as news %}
+                <a href={% url 'news' news.id %} class="tdn white pointer hover-opacity" style="display: block;">
+                    <div class="pc" style="width: 100%; padding-bottom: 60%;">
+                        <div class="flex-center" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                            <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                        </div>
+                    </div>
+                    <div class="pdb8 pdx8 white">
+                        <p style="font-size: 24px;">{{news.title}}</p>
+                        <p style="margin-top: -8px;">{{news.important_part}}</p>
+                        <span class="pdy4  border-yellow" style="font-size: min(3vw, 16px); border-left: 3px solid;">{{news.tag.name}}</span>
+                    </div>
+                </a>
+            {% endwith %}
+                <div class="space-between2 mrt8 mrr8">
+                {% for news in editors %}
+                    <a href={% url 'news' news.id %} class="tdn white hover-opacity pdt4 pdr4 pdb24 pdl4 pointer news-item-container-editors pc" style="width: 100%;">
+                        <div class="news-item-1st-div">
+                            <div style="position: relative; padding-bottom: 60%; background: rgba(0, 0, 0, 0.705); width: 100%;">
+                                <div class="flex-center pointer hover-opacity" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;  overflow: hidden;">
+                                    <img src="{{news.image.url}}" style="width:100%; height:100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pdx8 news-item-2nd-div" style="margin-top: -14px; font-family: sans-serif;">
+                            <h3>{{news.title}}</h3>
+                            <p class="news-item-container-p" style="margin-top: -8px; padding-bottom: 8px;">{{news.important_part}}</p>
+                            <span class="pdy4  border-red" style="font-size: min(3vw, 16px); border-left: 3px solid; position: absolute; bottom: 24px;">{{news.tag.name}}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+                    
+                </div>
+            </div>
+            <div class="editors-picks-news mrl8">
+                <div class="latest-news red">
+                    <h2 style="color: white; margin: auto; padding: 16px 16px 16px 16px;">Top Stories</h2>
+                    
+                </div>
+                <div style="font-family: sans-serif;">
+                {% with topstories.0 as news %}
+                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                        <span class="s3 l3" style="display: block; padding: 14px; color: white; background-color: red; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">1</span>
+                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    </a>
+                {% endwith %}
+                {% with topstories.1 as news %}
+                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                        <span class="s3 l3" style="display: block; padding: 14px; color: white; background-color: red; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">2</span>
+                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    </a>
+                {% endwith %}
+                {% with topstories.2 as news %}
+                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                        <span class="s3 l3" style="display: block; padding: 14px; color: white; background-color: red; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">3</span>
+                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    </a>
+                {% endwith %}
+                {% with topstories.3 as news %}
+                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                        <span class="s3 l3" style="display: block; padding: 14px; color: white; background-color: red; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">4</span>
+                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    </a>
+                {% endwith %}
+                {% with topstories.4 as news %}
+                    <a href={% url 'news' news.id %} class="tdn pd8 flex-latest-news hover-dark-gray pointer" style="background-color: rgb(63, 63, 63); border-bottom: 1px solid grey;">
+                        <span class="s3 l3" style="display: block; padding: 14px; color: white; background-color: red; font-size: 23px; margin: auto; height: 20px; width: 20px; text-align: center; border-radius: 50%;">5</span>
+                        <span class="pdx16 pdy24 s9 l9" style="display: block; font-size: 20px; color: white;">{{news.title}}</span>
+                    </a>
+                {% endwith %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+<!--
+    <div style="position: relative; width: 100%;">
+            <div class="news-item-container" style="width: 100%; background: rgba(0,0,0,.3); margin: 4px; position: relative;">
+                
+            </div>
+            <div style="position: absolute; top: 15%;">
+                <h4>ug eiugr g egkrek ergeg g eg e</h4>
+                <p>beg eg keiegeg geg eg ge, bdkdbrg ei gieg egelg  e gehgkegeg  ekg ege oeg ogeg</p>
+            </div>
+        </div>
+        <div class="news-item-container" style="width: 100%; background: rgba(0,0,0,.3); margin: 4px; position: relative;">
+
+        </div>
+        <div class="news-item-container" style="width: 100%; background: rgba(0,0,0,.3); margin: 4px; position: relative;">
+
+        </div>
+        <div class="news-item-container hide-small hide-medium" style="width: 100%; background: rgba(0,0,0,.3); margin: 4px; position: relative;">
+
+        </div>
+-->

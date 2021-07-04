@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+</head>
+<body class="hiddenx">
+    <div style="margin: -8px -8px 0 -8px;">
+        <div class="">
+            <div class="space-around black" style="height: 50px;">
+                <a class="tdn" href={% url 'home'%}><div class="flex-center">
+                    <span class="pdx8 white mrr4" style="font-size: 22px;">B</span>
+                    <span class="pdx8 white mrr4" style="font-size: 22px;">B</span>
+                    <span class="pdx8 white mrr4" style="font-size: 22px;">C</span>
+                </div></a>
+                <div class="flex">
+                    <p class="pdy8 navbar-item-padding border-left border-grey cool-link"><a class="text-white tdn" href={% url 'home'%}>Home</a></p>
+                    <p class="pdy8 navbar-item-padding border-left border-grey cool-link hide-small" onclick="notAvailable()">News</p>
+                    <p class="pdy8 navbar-item-padding border-left border-grey cool-link" onclick="notAvailable()">Sport</p>
+                    <p class="pdy8 navbar-item-padding border-left border-grey cool-link" onclick="notAvailable()">Asia</p>
+                    <p class="pdy8 navbar-item-padding border-left border-right border-grey cool-link" onclick="notAvailable()">Reel</p>
+                    <div class="hide-small" style="margin: auto;">
+                        <div class="flex-center" style="margin-left: 8px;">
+                            <input style="background-color: white; border: none; height: 22px;" placeholder="Search" type="text"/>
+                            <button class="white pointer" style="margin-left: -4px; border: none; height: 24px;">
+                                <i onclick="notAvailable()" class="fa fa-search" style="font-size: 20px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <span class="hide-large hide-medium" style="margin: auto;">
+                        <div class="flex-center pointer" style="margin-left: 8px;">
+                            <i onclick="notAvailable()" class="fa fa-search" style="font-size: 24px;"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+    <div class="black" style="margin-left: -8px; margin-right: -8px;">
+        <div style="max-width: 800px; margin: auto;">
+            <div class="pd16">
+                <p style="font-size: 24px;">Explore the BBC</p>
+                <div class="pdx16 text-white" style="display: inline-block; font-family: sans-serif; padding-bottom: 8px;">
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Home</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>News</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Sport</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Reel</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Culture</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Future</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Music</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>TV</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Weather</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Worklife</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Travel</b></a></span>
+                    <span class="pd4 border-right border-gray" style="width: 110px; display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#"><b>Sounds</b></a></span>
+                    
+                </div>
+                <br/><br/>
+                <div style="margin-right: 40px;"><hr/></div>
+                <div style="display: inline-block; font-family: sans-serif; padding: 8px 16px;">
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Terms of Use</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">About the BBC</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Privacy Policy</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Cookies</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Accessibility Help</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Parental Guidance</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Contact the BBC</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Get Personalised Newsletters</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">Advertise with us</a></span>
+                    <span class="pdy8 pdr24" style="display: block; float: left;"><a class="text-white tdn border-bottom border-black hover-border-gray" href="#" style="font-size: 14px;">AdChoices / Do Not Sell My Info</a></span>
+                </div>
+                <br/>
+                <p style="font-family: sans-serif;"><b>Copyright © 2021 BBC</b>. The BBC is not responsible for the content of external sites. <b class="border-bottom border-black hover-border-gray pointer">Read about our approach to external linking.</b></p>
+            </div>
+        </div>
+        <br/><br/><br/>  
+    </div>
+
+    <script>
+        function notAvailable(){
+            alert("Sorry! This Feature is not available.😕")
+        }
+    </script>
+</body>
+</html>
